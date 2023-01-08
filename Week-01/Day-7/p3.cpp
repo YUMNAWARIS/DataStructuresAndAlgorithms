@@ -1,3 +1,5 @@
+// Hackerrank
+// English representation of a given range of numbers
 // Hackerrank =>
 // print the English representation of given number in lowercase.
 
@@ -47,6 +49,9 @@ string to_Eng(int n)
 }
 int main()
 {
-    cout << to_Eng(4) << endl;
+    for (int i = 6; i <= 9; i++)
+    {
+        cout << to_Eng(i) << endl;
+    }
     return 0;
 }
