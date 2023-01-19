@@ -9,26 +9,26 @@ using namespace std;
 int main()
 {
     // Taking input an array and target element
-    int size, target;
-    cin >> size >> target;
+    int size;
+    cin >> size;
     int array[size];
     for (int i = 0; i < size; i++)
     {
         cin >> array[i];
     }
+
     // Algorithm
-    int output[2];
-    for (int i = 0; i < size; i++)
+    int max_profit = 0;
+    int mini = array[0];
+
+    for (int price : array)
     {
-        for (int j = i + 1; j < size; j++)
-        {
-            if (array[i] + array[j] == target)
-            {
-                output[0] = i;
-                output[1] = j;
-                break;
-            }
-        }
+        mini = min(mini, price);
+        int profit = price - mini;
+        max_profit = max(max_profit, profit);
     }
+
+    cout << max_profit << endl;
+
     return 0;
 }
