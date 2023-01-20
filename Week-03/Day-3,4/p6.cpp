@@ -1,21 +1,24 @@
 // Maximum subarray product
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 int main()
 {
-    int array[4] = {2, 3, -4, 6};
-    int maximum = array[0];
+    int nums[4] = {2, 3, -2, 4};
+    int size = 4;
     int product = 1;
-    for (int i = 0; i < 4; i++)
+    int l = 1, r = 1, res = INT8_MIN;
+    for (int i = 0; i < size; i++)
     {
-        product *= array[i];
-        maximum = max(maximum, product);
-        if (product < 0)
-        {
-            product = 1;
-        }
+        l = l * nums[i];
+        r = r * nums[size - i - 1];
+        res = max({res, l, r});
+        if (l == 0)
+            l = 1;
+        if (r == 0)
+            r = 1;
     }
-    cout << maximum << endl;
+    cout << res << endl;
     return 0;
 }
