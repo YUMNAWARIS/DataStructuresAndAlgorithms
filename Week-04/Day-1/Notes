@@ -1,0 +1,5 @@
+Character Array -> Array of Character
+Declaration
+char arr[n+1] -> size should be n+1 not n
+An extra character (aka null character) '/0' is added to the end of the array to determine where the word or sentence is ended
+
